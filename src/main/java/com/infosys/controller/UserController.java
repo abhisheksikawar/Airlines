@@ -31,7 +31,7 @@ public class UserController {
 		return userRepository.findAll();
 	}
 	//get User
-	@GetMapping("/{userName}")
+	@GetMapping("user/{userName}")
 	public User getUserByID(@PathVariable String userName) throws Throwable {
 		return userRepository.findByUserName(userName)
 				.orElseThrow(() -> new ResourceNotFoundException("User not found with user name : " + userName));
