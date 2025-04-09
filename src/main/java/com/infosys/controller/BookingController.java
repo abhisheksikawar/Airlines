@@ -38,6 +38,8 @@ public class BookingController {
         bookFlight.setFlight(flight);
         bookFlight.getPassengers().get(0).setBookFlight(bookFlight);
         //bookFlight.getPassengers().get(1).setBookFlight(bookFlight);
+
+
         bookFlight.getPassengers().stream().forEach(p->p.setBookFlight(bookFlight));
         BookFlight addedFlight=bookingRepository.save(bookFlight);
         return ResponseEntity.created(URI.create("/"+addedFlight.getBookingId())).body(addedFlight.getBookingId());
