@@ -34,7 +34,8 @@ public class BookFlight {
 
     @OneToOne
     @JoinColumn(name = "flight_number")
-    private Flight flight;
+    private
+    Flight flight;
 
 
     @OneToMany(mappedBy = "bookFlight",cascade = CascadeType.ALL)
